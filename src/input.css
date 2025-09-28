@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@keyframes fade-slide-in-left {
+  0% { opacity: 0; 
+  transform: translateX(-20px);
+  }
+  100% { opacity: 1; 
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(-20px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
