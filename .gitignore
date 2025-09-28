@@ -1,0 +1,8 @@
+# ...existing code...
+# Ignore font library files and folders
+/src/fonts/
+/Satoshi_Complete/
+*.woff
+*.woff2
+*.ttf
+*.otf
