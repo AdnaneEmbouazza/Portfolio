@@ -8,8 +8,8 @@
 </head>
 <body class="bg-[#040b1f]">
   <header class="sticky top-0 z-50">
-    <div class="w-full h-25 flex justify-between items-center">
-      <div class="flex justify-start items-center ">
+    <div class="w-full h-25 flex justify-between items-center md:backdrop-blur bg-[#040b1f]/80 ">
+      <div class="flex justify-start items-center">
         <div class="flex md:px-20">
           <button class="mr-5 animate-[fade-slide-in-left_0.6s_ease-in] bg-[#2b3481] text-white font-semibold px-6 py-2 rounded-lg shadow-md hover:bg-cyan-600 hover:scale-105 transition-all duration-200">
              Resume 
@@ -34,17 +34,34 @@
   <main>
     <section class="w-full">
       <div class=" mx-auto h-auto flex flex-col md:flex-row-reverse md:justify-center px-8">
-        <div class="flex flex-col gap-8 max-w-2xl my-24 py-16 px-6 ml-5">
+        <div class="flex flex-col gap-10 my-24 py-16 px-6 ml-5 max-w-2xl bg-[#1a2336]/80 rounded-3xl">
+          <!-- Nom -->
           <div>
-            <h1 class="font-satoshi font-bold text-5xl md:text-8xl text-[#32A0FB] tracking-wide text-center drop-shadow-lg mb-2 lg:text-left [opacity:0] animate-[fade-slide-in-top_0.8s_ease-in-out_forwards] ">Embouazza Adnane </h1>
+            <h1 class="font-satoshi font-extrabold text-5xl md:text-8xl text-[#32A0FB] tracking-tight text-center md:text-center drop-shadow-2xl mb-4 [opacity:0] animate-[fade-slide-in-top_0.8s_ease-in-out_forwards]">
+              Embouazza Adnane
+            </h1>
           </div>
+        
+          <!-- Titre -->
           <div>
-            <p class="text-xl md:text-3xl font-satoshi font-semibold text-amber-50 text-justify [opacity:0] animate-[fade-slide-in-top_0.8s_ease-in-out_forwards]  [animation-delay:0.5s]"> FullStack Developer and IT Student </p>
+            <p class="text-lg md:text-2xl font-satoshi font-medium text-amber-50 text-center md:text-center leading-relaxed [opacity:0] animate-[fade-slide-in-top_0.8s_ease-in-out_forwards] [animation-delay:0.5s]">
+              FullStack Developer <span class="text-[#32A0FB] font-light">&</span> IT Student
+            </p>
           </div>
+        
+          <!-- Slogan -->
           <div>
-            <p class="text-xl  md:text-2xl font-satoshi font-semibold text-justify text-amber-50 text-nowrap [opacity:0] animate-[fade-slide-in-top_0.8s_ease-in-out_forwards] [animation-delay:1s]"> Always <span class="text-[#32A0FB] font-bold drop-shadow text-xl md:text-2xl rounded px-1">Learning</span>, Always <span class="text-[#32A0FB] font-bold drop-shadow text-xl md:text-2xl rounded px-1">Improving</span>, Always <span class="text-[#32A0FB] font-bold drop-shadow text-xl md:text-2xl rounded px-1">Creating </span></p>
+            <p class="text-base md:text-xl font-satoshi font-medium text-amber-50 text-center md:text-center leading-loose tracking-wide [opacity:0] animate-[fade-slide-in-top_0.8s_ease-in-out_forwards] [animation-delay:1s]">
+              Always 
+              <span class="text-[#32A0FB] font-bold bg-[#32A0FB]/10 px-2 py-1 rounded-lg shadow-sm">Learning</span>, 
+              Always 
+              <span class="text-[#32A0FB] font-bold bg-[#32A0FB]/10 px-2 py-1 rounded-lg shadow-sm">Improving</span>, 
+              Always 
+              <span class="text-[#32A0FB] font-bold bg-[#32A0FB]/10 px-2 py-1 rounded-lg shadow-sm">Creating</span>
+            </p>
           </div>
         </div>
+        
         <div class="max-w-4xl flex flex-col flex-none justify-center items-center animate-[fade-slide-in-top_0.8s_ease-in-out_forwards] my-24 mr-5 px-8 ">
           <div class="relative w-full max-w-md mx-auto border-amber-50 border-1 rounded-2xl">
             <!-- couche décorative arrière (rotated gradient) -->
@@ -60,7 +77,7 @@
               <!-- contenu code-like (modifiable) -->
               <pre class="font-mono text-sm text-amber-100 leading-6">
 <span class="text-[#61a76b]">// FullStack Developer</span>
-<span class="text-[#6193d3]">const</span> <span class="text-blue-400">person</span>:<span class="text-green-300"> Developer</span> = {
+<span class="text-[#6193d3]">let</span> <span class="text-blue-400">person</span>:<span class="text-green-300"> Developer</span> = {
   <span class="text-blue-300">name</span>: <span class="text-[#e69976]">'Embouazza'</span>,
   <span class="text-blue-300">surname</span>: <span class="text-[#e69976]">'Adnane'</span>,
   <span class="text-blue-300">skills</span>: <span class="text-yellow-400">[</span><span class="text-[#e69976]">'Python'</span>, <span class="text-[#e69976]">'PHP'</span> , <span class="text-[#e69976]">'Javascript'</span><span class="text-yellow-400">]</span>,
