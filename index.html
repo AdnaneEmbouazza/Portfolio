@@ -8,7 +8,7 @@
 </head>
 <body class="bg-[#040b1f]">
   <header class="sticky top-0 z-50">
-    <div class="w-full h-25 flex justify-between items-center md:backdrop-blur bg-[#040b1f]/80 ">
+    <div class="w-full h-25 flex justify-between items-center backdrop-blur">
       <div class="flex justify-start items-center">
         <div class="flex md:px-20">
           <button class="mr-5 animate-[fade-slide-in-left_0.6s_ease-in] bg-[#2b3481] text-white font-semibold px-6 py-2 rounded-lg shadow-md hover:bg-cyan-600 hover:scale-105 transition-all duration-200">
@@ -32,12 +32,12 @@
   </header>
   
   <main>
-    <section class="w-full">
-      <div class=" mx-auto h-auto flex flex-col md:flex-row-reverse md:justify-center px-8">
-        <div class="flex flex-col gap-10 my-24 py-16 px-6 ml-5 max-w-2xl bg-[#1a2336]/80 rounded-3xl">
+    <section class="w-full py-10">
+      <div class="shadow-2xl mx-auto h-auto flex flex-col md:flex-row-reverse md:justify-center px-8 bg-[#1a2336]/80 rounded-3xl md:max-w-7xl animate-[fade-slide-in-top_0.8s_ease-in-out_forwards]">
+        <div class="flex flex-col gap-10 my-24 py-16 px-6 ml-5 max-w-2xl bg-[#040b1f]/70 rounded-3xl [opacity:0] animate-[fade-slide-in-top_0.8s_ease-in-out_forwards]">
           <!-- Nom -->
           <div>
-            <h1 class="font-satoshi font-extrabold text-5xl md:text-8xl text-[#32A0FB] tracking-tight text-center md:text-center drop-shadow-2xl mb-4 [opacity:0] animate-[fade-slide-in-top_0.8s_ease-in-out_forwards]">
+            <h1 class="font-satoshi font-extrabold text-5xl md:text-7xl text-[#32A0FB] tracking-tight text-center md:text-center drop-shadow-2xl mb-4 [opacity:0] animate-[fade-slide-in-top_0.8s_ease-in-out_forwards]">
               Embouazza Adnane
             </h1>
           </div>
@@ -45,19 +45,19 @@
           <!-- Titre -->
           <div>
             <p class="text-lg md:text-2xl font-satoshi font-medium text-amber-50 text-center md:text-center leading-relaxed [opacity:0] animate-[fade-slide-in-top_0.8s_ease-in-out_forwards] [animation-delay:0.5s]">
-              FullStack Developer <span class="text-[#32A0FB] font-light">&</span> IT Student
+              Developpeur FullStack <span class="font-light">&</span> Etudiant en Informatique
             </p>
           </div>
         
           <!-- Slogan -->
-          <div>
+          <div class="">
             <p class="text-base md:text-xl font-satoshi font-medium text-amber-50 text-center md:text-center leading-loose tracking-wide [opacity:0] animate-[fade-slide-in-top_0.8s_ease-in-out_forwards] [animation-delay:1s]">
-              Always 
-              <span class="text-[#32A0FB] font-bold bg-[#32A0FB]/10 px-2 py-1 rounded-lg shadow-sm">Learning</span>, 
-              Always 
-              <span class="text-[#32A0FB] font-bold bg-[#32A0FB]/10 px-2 py-1 rounded-lg shadow-sm">Improving</span>, 
-              Always 
-              <span class="text-[#32A0FB] font-bold bg-[#32A0FB]/10 px-2 py-1 rounded-lg shadow-sm">Creating</span>
+              Toujours 
+              <span class="text-[#32A0FB] font-bold px-2 py-1 ">Apprendre</span>, 
+              Toujours 
+              <span class="text-[#32A0FB] font-bold px-2 py-1 ">S'Améliorer</span>, 
+              Toujours 
+              <span class="text-[#32A0FB] font-bold px-2 py-1 ">Créer</span>
             </p>
           </div>
         </div>
@@ -65,7 +65,7 @@
         <div class="max-w-4xl flex flex-col flex-none justify-center items-center animate-[fade-slide-in-top_0.8s_ease-in-out_forwards] my-24 mr-5 px-8 ">
           <div class="relative w-full max-w-md mx-auto border-amber-50 border-1 rounded-2xl">
             <!-- couche décorative arrière (rotated gradient) -->
-            <div class="animate-[swing_5s_ease-in-out_forwards] absolute inset-0 -z-10 rounded-2xl bg-gradient-to-tr from-[#0b2a4a]/60 to-[#10203a]/40" style="transform: rotate(-10deg); "></div>
+            <div class="animate-[swing_2s_ease-in-out_forwards] absolute inset-0 -z-10 rounded-2xl bg-gradient-to-tr from-[#0b2a4a]/ to-[#26416d]" style="transform: rotate(-5deg); "></div>
 
             <!-- carte "code" -->
             <div class="relative bg-[#0b1119]/90 border border-white/10 rounded-2xl p-6 shadow-2xl overflow-hidden">
@@ -76,12 +76,12 @@
 
               <!-- contenu code-like (modifiable) -->
               <pre class="font-mono text-sm text-amber-100 leading-6">
-<span class="text-[#61a76b]">// FullStack Developer</span>
+<span class="text-[#61a76b]">// Developpeur FullStack</span>
 <span class="text-[#6193d3]">let</span> <span class="text-blue-400">person</span>:<span class="text-green-300"> Developer</span> = {
-  <span class="text-blue-300">name</span>: <span class="text-[#e69976]">'Embouazza'</span>,
-  <span class="text-blue-300">surname</span>: <span class="text-[#e69976]">'Adnane'</span>,
-  <span class="text-blue-300">skills</span>: <span class="text-yellow-400">[</span><span class="text-[#e69976]">'Python'</span>, <span class="text-[#e69976]">'PHP'</span> , <span class="text-[#e69976]">'Javascript'</span><span class="text-yellow-400">]</span>,
-  <span class="text-blue-300">mindset</span>: <span class="text-[#e69976]">'Passionate'</span> 
+  <span class="text-blue-300">Nom</span>: <span class="text-[#e69976]">'Embouazza'</span>,
+  <span class="text-blue-300">Prénom</span>: <span class="text-[#e69976]">'Adnane'</span>,
+  <span class="text-blue-300">Compétences</span>: <span class="text-yellow-400">[</span><span class="text-[#e69976]">'Python'</span>, <span class="text-[#e69976]">'PHP'</span> , <span class="text-[#e69976]">'Javascript'</span><span class="text-yellow-400">]</span>,
+  <span class="text-blue-300">Etat_d_Esprit</span>: <span class="text-[#e69976]">'Passioné'</span> 
 <span class="text-yellow-400">}</span>;
               </pre>
             </div>
@@ -93,12 +93,12 @@
     <section class="w-full py-16 ">
       <div id="Presentation" class="max-w-3xl mx-auto rounded-3xl shadow-2xl bg-[#1a2336]/80 px-8 py-12 flex flex-col gap-12 animate-[fade-slide-in-top_0.8s_ease-in-out_forwards]"> <!--flex col ici pour afficher tt les elements du about me verticalement-->
         <!-- Titre principal -->
-         <h1 class="font-satoshi font-extrabold text-5xl md:text-6xl text-[#32A0FB] mb-2 tracking-tight text-left drop-shadow-lg">
-          About Me
+         <h1 class="text-center font-satoshi font-extrabold text-5xl md:text-6xl text-[#32A0FB] mb-2 tracking-tight drop-shadow-lg">
+          <span class="">Presentation</span>
         </h1>
         <!-- Sous-titre -->
-         <h3 class="font-satoshi font-bold text-3xl md:text-4xl text-amber-50 text-center">
-          Presentation
+         <h3 class="font-satoshi font-bold text-3xl md:text-4xl text-amber-50 text-center bg-[#040b1f]/70 px-5 rounded-xl">
+          <span class="">Presentation</span>
         </h3>
         <!-- Présentation -->
          <p class="font-satoshi text-xl md:text-2xl text-amber-50 text-justify leading-relaxed"> <!--leading-relaxed : améliore la lecture du texte -->
@@ -106,8 +106,8 @@
         </p>
         <!-- Diplômes -->
          <div>
-          <h3 class="font-satoshi font-bold text-3xl md:text-4xl text-amber-50 mb-6 text-center pb-5">
-            Degrees
+          <h3 class="font-satoshi font-bold text-3xl md:text-4xl text-amber-50 mb-10 text-center px-5 bg-[#040b1f]/70 rounded-xl">
+            <span class="">Degrees</span>
           </h3>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-8"> <!-- Grid pour afficher les deux box de diplome de la meme taille -->
             <!-- Licence Cinéma -->
@@ -129,6 +129,131 @@
             </div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container-skill flex justify-center items-center border-2 border-green-300">
+        <div class="container-skill-title border-2 border-red-600">
+          <h1 class="border-2 border-amber-50"> Compétences </h1>
+        </div>
+
+        <div class="container-skill-container1 border-2 border-yellow-300">
+
+          <div class="container-skill-langage">
+            <div class="container-skill-langage-title">
+              <h3>
+                Langage
+              </h3>
+            </div>
+
+            <div class="container-skill-langage-container">
+
+            <div class="Python">
+
+            </div>
+
+            <div class="Javascript">
+
+            </div>
+
+            <div class="PHP">
+
+            </div>
+
+            <div class="TypeScript">
+
+            </div>
+          
+          </div>
+        </div>
+
+          <div class="container-skill-framework">
+            <div class="container-skill-framework-title">
+              <h3>
+                Framework
+              </h3>
+            </div>
+
+            <div class="container-skill-framework-container">
+              <div class="fastAPI">
+
+              </div>
+              <div class="TailWind CSS">
+
+              </div>
+              <div class="Angular">
+
+              </div>
+            
+            </div>
+          </div>
+
+          <div class="container-skill-front-end">
+            <div class="container-skill-front-end-title">
+                <h3>
+                  Front-End
+                </h3>
+            </div>
+            
+            <div class="container-skill-front-end-container">
+              <div class="HTML">
+
+              </div >
+              <div class="CSS">
+
+              </div>
+            
+            </div>
+          </div>
+          
+        </div>
+
+        <div class="container-skill-container2">
+          <div class="container-skill-BDD">
+            <div class="container-skill-BDD-title">
+              <h3>
+                Base de Données
+              </h3>
+            </div>
+
+          <div class="container-skill-BDD-container">
+            <div class="PSQL">
+
+            </div>
+
+            <div class="MYSQL">
+
+            </div>
+          </div>
+        </div>
+
+        <div class="container-skill-outils">
+          <div class="container-skill-outils-title">
+            <h3>
+              Outils
+            </h3>
+          </div>
+
+          <div class="container-skill-outils-container">
+
+            <div class="AWS">
+
+            </div>
+
+            <div class="Git">
+
+            </div>
+
+            <div class="Github">
+
+            </div>
+
+          </div>
+        </div>
+      
+      </div>
+
       </div>
     </section>
 
