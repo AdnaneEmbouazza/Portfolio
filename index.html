@@ -33,7 +33,7 @@
   
   <main>
     <section class="w-full py-10">
-      <div class="shadow-2xl mx-auto h-auto flex flex-col md:flex-row-reverse md:justify-center px-8 bg-[#1a2336]/80 rounded-3xl md:max-w-7xl animate-[fade-slide-in-top_0.8s_ease-in-out_forwards]">
+      <div class="shadow-2xl mx-auto h-auto flex flex-col justify-center md:flex-row-reverse md:justify-center px-8 bg-[#1a2336]/80 rounded-3xl md:max-w-7xl animate-[fade-slide-in-top_0.8s_ease-in-out_forwards]">
         <div class="flex flex-col gap-10 my-24 py-16 px-6 ml-5 max-w-2xl bg-[#040b1f]/70 rounded-3xl [opacity:0] animate-[fade-slide-in-top_0.8s_ease-in-out_forwards]">
           <!-- Nom -->
           <div>
@@ -80,7 +80,7 @@
 <span class="text-[#6193d3]">let</span> <span class="text-blue-400">person</span>:<span class="text-green-300"> Developer</span> = {
   <span class="text-blue-300">Nom</span>: <span class="text-[#e69976]">'Embouazza'</span>,
   <span class="text-blue-300">Prénom</span>: <span class="text-[#e69976]">'Adnane'</span>,
-  <span class="text-blue-300">Compétences</span>: <span class="text-yellow-400">[</span><span class="text-[#e69976]">'Python'</span>, <span class="text-[#e69976]">'PHP'</span> , <span class="text-[#e69976]">'Javascript'</span><span class="text-yellow-400">]</span>,
+  <span class="text-blue-300">Compétences</span>: <span class="text-yellow-400">[</span><span class="text-[#e69976]">'Python', 'PHP', 'Javascript'</span><span class="text-yellow-400">]</span>,
   <span class="text-blue-300">Etat_d_Esprit</span>: <span class="text-[#e69976]">'Passioné'</span> 
 <span class="text-yellow-400">}</span>;
               </pre>
@@ -183,11 +183,13 @@
         </div>
 
         <div class="flex-1 bg-[#0b1119]/80 rounded-2xl p-4 shadow-lg hover:scale-105 transition-all duration-200">
-          <h3 class="font-satoshi font-bold text-xl text-amber-50 mb-3 text-center bg-[#104169] px-4 rounded-lg"> <span class="">Outils </span> </h3>
-          <div class="flex justify-self-center flex-wrap gap-3">
+          <h3 class="font-satoshi font-bold text-xl text-amber-50 mb-3 text-center bg-[#104169] px-4 rounded-lg"> <span class="">Outils et Bibliothèques</span> </h3>
+          <div class="flex justify-evenly flex-wrap gap-3">
             <span class="mx-5 inline-flex items-center px-3 py-1 rounded-full text-amber-50 text-medium font-semibold hover:scale-105 transition-all duration-200 hover:bg-[#263194]">AWS</span>
             <span class="mx-5 inline-flex items-center px-3 py-1 rounded-full text-amber-50 text-medium font-semibold hover:scale-105 transition-all duration-200 hover:bg-[#263194]">Git</span>
             <span class="mx-5 inline-flex items-center px-3 py-1 rounded-full text-amber-50 text-medium font-semibold hover:scale-105 transition-all duration-200 hover:bg-[#263194]">GitHub</span>
+            <span class="mx-5 inline-flex items-center px-3 py-1 rounded-full text-amber-50 text-medium font-semibold hover:scale-105 transition-all duration-200 hover:bg-[#263194]">SQLAlchemy</span>
+            <span class="mx-5 inline-flex items-center px-3 py-1 rounded-full text-amber-50 text-medium font-semibold hover:scale-105 transition-all duration-200 hover:bg-[#263194]">Jinja2</span>
           </div>
         </div>
       </div>
@@ -199,49 +201,73 @@
   <div class="max-w-7xl mx-auto rounded-3xl shadow-2xl bg-[#1a2336]/80 px-6 md:px-8 py-8 gap-8 animate-[fade-slide-in-top_0.8s_ease-in-out_forwards]">
     <div class="mb-8">
       <h2 class="font-satoshi font-extrabold text-4xl md:text-5xl text-[#65baff]">Projets</h2>
-      <p class="text-amber-50 mt-2">Exemples de réalisations — swipe / utilise les flèches pour naviguer.</p>
+      <p class="text-amber-50 mt-2 text-xl">Quelque réalisations de Projets personelles et professionelles</p>
     </div>
-
-    <div class="relative">
+    <div class="">
       <!-- boutons navigation -->
-      <button aria-label="Précédent" class="project-scroll-btn left-0 -translate-y-1/2 hidden md:flex items-center justify-center absolute top-1/2 z-20 w-12 h-12 rounded-full bg-gradient-to-br from-[#232d83] to-[#212fac] text-white shadow-lg hover:scale-105 transition"
-              data-dir="-1">
-        <!-- chevron left -->
+      <button aria-label="Bouton Précédent" class="project-scroll-btn left-0 -translate-y-1/2 hidden md:flex items-center justify-center absolute top-1/2 z-20 w-12 h-12 rounded-full bg-gradient-to-br from-[#232d83] to-[#212fac] text-white shadow-lg hover:scale-105 transition"
+              data-dir="-1"> <!--data-dir : valeur du dir -> -1 = Scroll à gauche -->
+        <!-- fleche bouton gauche-->
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
       </button>
 
-      <div id="projects-scroller" class="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth py-4 px-2 md:px-6">
+      <div id="projects-scroller" class="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth py-4 px-2 md:px-6"> <!--overflow-x-auto : pour que les projets ne sortent pas du container (qu'il disparaisse dérièrre en arrière-plan)-->
         <!-- projet 1 -->
         <article class="project-card snap-center flex-none w-[300px] md:w-[380px] lg:w-[420px] rounded-2xl bg-[#0b1119]/90 p-6 shadow-2xl">
-          <div class="h-44 bg-gradient-to-br from-[#0b2a4a] to-[#10203a] rounded-lg mb-4 flex items-center justify-center text-white/80">Visuel projet</div>
-          <h3 class="font-satoshi font-bold text-lg text-amber-50 mb-1">Projet 1</h3>
-          <p class="text-amber-50 text-sm leading-relaxed">Brève description. Tech : React, Tailwind.</p>
-          <div class="mt-4 flex gap-2 flex-wrap">
-            <span class="inline-flex px-2 py-1 rounded bg-[#10172a]/60 text-sm text-amber-50">React</span>
-            <span class="inline-flex px-2 py-1 rounded bg-[#10172a]/60 text-sm text-amber-50">Tailwind</span>
+          <div class="h-44 bg-gradient-to-br from-[#0b2a4a] to-[#10203a] rounded-lg mb-4 flex items-center justify-center text-white/80">
+            <img src="image/site-compta.PNG">
+          </div>
+          <h3 class="font-satoshi font-bold text-lg text-amber-50 mb-1">Site de Gestions de Comptabilité</h3>
+          <div class="mt-2 mb-2 flex gap-2 flex-wrap">
+            <span class="inline-flex px-2 py-1 rounded text-sm text-amber-50">FastAPI</span>
+            <span class="inline-flex px-2 py-1 rounded text-sm text-amber-50">SQLAlchemy</span>
+            <span class="inline-flex px-2 py-1 rounded text-sm text-amber-50">Jinja2</span>
+          </div>
+          <div class="flex">
+            <bouton class=" bg-[#2b3481] text-white font-semibold px-6 py-2 rounded-lg shadow-md hover:bg-cyan-600 hover:scale-105 transition-all duration-200">Details</bouton>
           </div>
         </article>
 
         <!-- projet 2 -->
         <article class="project-card snap-center flex-none w-[300px] md:w-[380px] lg:w-[420px] rounded-2xl bg-[#0b1119]/90 p-6 shadow-2xl">
-          <div class="h-44 bg-gradient-to-br from-[#122d3f] to-[#274a6b] rounded-lg mb-4 flex items-center justify-center text-white/80">Visuel projet</div>
-          <h3 class="font-satoshi font-bold text-lg text-amber-50 mb-1">Projet 2</h3>
-          <p class="text-amber-50 text-sm leading-relaxed">Brève description. Tech : FastAPI, PostgreSQL.</p>
+          <div class="h-44 bg-gradient-to-br from-[#122d3f] to-[#274a6b] rounded-lg mb-4 flex items-center justify-center text-white/80">
+            <img src="image/site-jeu-video.PNG">
+          </div>
+          <h3 class="font-satoshi font-bold text-lg text-amber-50 mb-1">Site de Vente de Jeu Vidéo</h3>
+          <div class="mt-2 mb-2 flex gap-2 flex-wrap">
+            <span class="inline-flex px-2 py-1 rounded text-sm text-amber-50">PHP</span>
+            <span class="inline-flex px-2 py-1 rounded text-sm text-amber-50">PSQL</span>
+          </div>
+          <div class="flex">
+            <bouton class=" bg-[#2b3481] text-white font-semibold px-6 py-2 rounded-lg shadow-md hover:bg-cyan-600 hover:scale-105 transition-all duration-200">Details</bouton>
+          </div>
         </article>
 
         <!-- projet 3 -->
         <article class="project-card snap-center flex-none w-[300px] md:w-[380px] lg:w-[420px] rounded-2xl bg-[#0b1119]/90 p-6 shadow-2xl">
-          <div class="h-44 bg-gradient-to-br from-[#102a3e] to-[#233e5f] rounded-lg mb-4 flex items-center justify-center text-white/80">Visuel projet</div>
-          <h3 class="font-satoshi font-bold text-lg text-amber-50 mb-1">Projet 3</h3>
-          <p class="text-amber-50 text-sm leading-relaxed">Brève description. Tech : Node.js, Docker.</p>
+          <div class="h-44 bg-gradient-to-br from-[#102a3e] to-[#233e5f] rounded-lg mb-4 flex items-center justify-center text-white/80">
+            <img src="image/site-touriste.PNG">
+          </div>
+          <h3 class="font-satoshi font-bold text-lg text-amber-50 mb-1">Site Touristique </h3>
+          <div class="mt-2 mb-2 flex gap-2 flex-wrap">
+            <span class="inline-flex px-2 py-1 rounded text-sm text-amber-50">HTML</span>
+            <span class="inline-flex px-2 py-1 rounded text-sm text-amber-50">CSS</span>
+          </div>
+          <div class="flex">
+            <bouton class=" bg-[#2b3481] text-white font-semibold px-6 py-2 rounded-lg shadow-md hover:bg-cyan-600 hover:scale-105 transition-all duration-200">Details</bouton>
+          </div>
         </article>
 
-        <!-- ajoute d'autres cards si besoin -->
+      </div>
+      
+
       </div>
 
-      <button aria-label="Suivant" class="project-scroll-btn right-0 -translate-y-1/2 hidden md:flex items-center justify-center absolute top-1/2 z-20 w-12 h-12 rounded-full bg-gradient-to-br from-[#232d83] to-[#212fac] text-white shadow-lg hover:scale-105 transition"
-              data-dir="1">
-        <!-- chevron right -->
+      
+
+      <button aria-label="Bouton Suivant" class="project-scroll-btn right-0 -translate-y-1/2 hidden md:flex items-center justify-center absolute top-1/2 z-20 w-12 h-12 rounded-full bg-gradient-to-br from-[#232d83] to-[#212fac] text-white shadow-lg hover:scale-105 transition"
+              data-dir="1"> <!--data-dir : valeur du dir -> 1 = Scroll à droite -->
+        <!-- fleche bouton droit -->
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
       </button>
     </div>
