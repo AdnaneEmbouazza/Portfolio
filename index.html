@@ -213,23 +213,25 @@
 
       <div id="projects-scroller" class="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth py-4 px-2 md:px-6"> <!--overflow-x-auto : pour que les projets ne sortent pas du container (qu'il disparaisse dérièrre en arrière-plan)-->
         <!-- projet 1 -->
-        <article class="project-card snap-center flex-none w-[300px] md:w-[380px] lg:w-[420px] rounded-2xl bg-[#0b1119]/90 p-6 shadow-2xl">
+        <article class="hover:scale-105 transition-all duration-200 project-card snap-center flex-none w-[300px] md:w-[380px] lg:w-[420px] rounded-2xl bg-[#0b1119]/90 p-6 shadow-2xl">
           <div class="h-44 bg-gradient-to-br from-[#0b2a4a] to-[#10203a] rounded-lg mb-4 flex items-center justify-center text-white/80">
-            <img src="image/site-compta.PNG">
+            <img src="image/site-compta.PNG" >
           </div>
           <h3 class="font-satoshi font-bold text-lg text-amber-50 mb-1">Site de Gestions de Comptabilité</h3>
           <div class="mt-2 mb-2 flex gap-2 flex-wrap">
             <span class="inline-flex px-2 py-1 rounded text-sm text-amber-50">FastAPI</span>
             <span class="inline-flex px-2 py-1 rounded text-sm text-amber-50">SQLAlchemy</span>
             <span class="inline-flex px-2 py-1 rounded text-sm text-amber-50">Jinja2</span>
+            <span class="inline-flex px-2 py-1 rounded text-sm text-amber-50">JavaScript</span>
           </div>
           <div class="flex">
-            <bouton class=" bg-[#2b3481] text-white font-semibold px-6 py-2 rounded-lg shadow-md hover:bg-cyan-600 hover:scale-105 transition-all duration-200">Details</bouton>
+            <button data-modal-target="modal-project1" class="bg-[#2b3481] text-white font-semibold px-6 py-2 rounded-lg shadow-md hover:bg-cyan-600 hover:scale-105 transition-all duration-200" type="button" aria-haspopup="dialog" aria-controls="modal-project1">
+              Details</bouton>
           </div>
         </article>
 
         <!-- projet 2 -->
-        <article class="project-card snap-center flex-none w-[300px] md:w-[380px] lg:w-[420px] rounded-2xl bg-[#0b1119]/90 p-6 shadow-2xl">
+        <article class="hover:scale-105 transition-all duration-200 project-card snap-center flex-none w-[300px] md:w-[380px] lg:w-[420px] rounded-2xl bg-[#0b1119]/90 p-6 shadow-2xl">
           <div class="h-44 bg-gradient-to-br from-[#122d3f] to-[#274a6b] rounded-lg mb-4 flex items-center justify-center text-white/80">
             <img src="image/site-jeu-video.PNG">
           </div>
@@ -239,16 +241,30 @@
             <span class="inline-flex px-2 py-1 rounded text-sm text-amber-50">PSQL</span>
           </div>
           <div class="flex">
-            <bouton class=" bg-[#2b3481] text-white font-semibold px-6 py-2 rounded-lg shadow-md hover:bg-cyan-600 hover:scale-105 transition-all duration-200">Details</bouton>
+            <bouton data-modal-target="modal-project2" class="bg-[#2b3481] text-white font-semibold px-6 py-2 rounded-lg shadow-md hover:bg-cyan-600 hover:scale-105 transition-all duration-200">Details</bouton>
           </div>
         </article>
 
         <!-- projet 3 -->
-        <article class="project-card snap-center flex-none w-[300px] md:w-[380px] lg:w-[420px] rounded-2xl bg-[#0b1119]/90 p-6 shadow-2xl">
+        <article class="hover:scale-105 transition-all duration-200 project-card snap-center flex-none w-[300px] md:w-[380px] lg:w-[420px] rounded-2xl bg-[#0b1119]/90 p-6 shadow-2xl">
           <div class="h-44 bg-gradient-to-br from-[#102a3e] to-[#233e5f] rounded-lg mb-4 flex items-center justify-center text-white/80">
             <img src="image/site-touriste.PNG">
           </div>
           <h3 class="font-satoshi font-bold text-lg text-amber-50 mb-1">Site Touristique </h3>
+          <div class="mt-2 mb-2 flex gap-2 flex-wrap">
+            <span class="inline-flex px-2 py-1 rounded text-sm text-amber-50">HTML</span>
+            <span class="inline-flex px-2 py-1 rounded text-sm text-amber-50">CSS</span>
+          </div>
+          <div class="flex">
+            <bouton class=" bg-[#2b3481] text-white font-semibold px-6 py-2 rounded-lg shadow-md hover:bg-cyan-600 hover:scale-105 transition-all duration-200">Details</bouton>
+          </div>
+        </article>
+
+        <article class="hover:scale-105 transition-all duration-200 project-card snap-center flex-none w-[300px] md:w-[380px] lg:w-[420px] rounded-2xl bg-[#0b1119]/90 p-6 shadow-2xl">
+          <div class="h-44 bg-gradient-to-br from-[#102a3e] to-[#233e5f] rounded-lg mb-4 flex items-center justify-center text-white/80">
+            <img src="image/site-accessibilité.PNG">
+          </div>
+          <h3 class="font-satoshi font-bold text-lg text-amber-50 mb-1">Site Accesibilité </h3>
           <div class="mt-2 mb-2 flex gap-2 flex-wrap">
             <span class="inline-flex px-2 py-1 rounded text-sm text-amber-50">HTML</span>
             <span class="inline-flex px-2 py-1 rounded text-sm text-amber-50">CSS</span>
@@ -273,12 +289,139 @@
     </div>
   </div>
 
-  <script src="js/scroll.js"></script>
+
+
+
+
+  <!-- Modal projet 1-->
+<div id="modal-project1"class="fixed hidden inset-0 z-50 flex items-center justify-center px-4 py-8" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="titre-modal1">
+  <!-- overlay  cache les elements en arrière plan -->
+  <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" data-modal-overlay></div>
+
+  <!-- modal content affichage du contenu de la modale-->
+  <div class="relative w-full max-w-3xl bg-[#0b1119]/95 border border-white/10 rounded-2xl shadow-2xl p-6 transform transition-all duration-300 max-h-[85vh] overflow-auto">
+
+    <header class="mb-4 flex justify-between items-start">
+      <h3 id="modal-project1-title" class="font-satoshi font-bold text-3xl text-[#32A0FB]">Site de Gestions de Comptabilité</h3>
+    </header>
+
+    <div>
+      <p class="Satoshi font-medium text-amber-50 leading-relaxed mb-5 text-lg text-justify">
+        Ce projet a été réalisé dans le cadre d'un Stage de première année de BTS SIO , chez l'entreprise Vademi Cybersécurité.
+        Le Projet avait pour but la réalisation d'un Site Web permettant la gestions de Facture et de Devis , 
+        et plus généralement de la comptabilité de l'entreprise.
+      </p>
+    </div>
+
+    <p class="Satoshi font-bold text-amber-50 mb-5 text-2xl ">Screenshot </p>
+    <div class="flex justify-center items-center flex-wrap gap-6">
+      <div class="w-full md:flex-1">
+        <div class="w-full mb-6 flex items-center justify-center">
+          <img src="image/site-compta.PNG" alt="dashboard du site" class="max-w-full max-h-[60vh] object-contain cursor-zoom-in rounded-md shadow-md">
+        </div>
+        
+        <div class="w-full mb-6 flex items-center justify-center">
+          <img src="image/site-compta1.PNG" alt="affichage des factures" class="max-w-full max-h-[60vh] object-contain cursor-zoom-in rounded-md shadow-md">
+        </div>
+
+        <div class="w-full mb-6 flex items-center justify-center">
+          <img src="image/site-compta2.PNG" alt="affichage des factures" class="max-w-full max-h-[60vh] object-contain cursor-zoom-in rounded-md shadow-md">
+        </div>
+      </div>
+
+    </div>
+
+    <div>
+      <p class="text-amber-50 leading-relaxed mb-5 text-lg Satoshi font-medium">
+        Ce projet a fait intervenir de nombreuse technologie et outils avec lesquelles je n'étais pas familier tel que:
+        <ul>
+          <li><p class="text-amber-50 leading-relaxed mb-2 text-lg Satoshi font-medium">. L'Utilisation de Framework pour le back-End avec FastAPI.</p></li>
+          <li><p class="text-amber-50 leading-relaxed mb-2 text-lg Satoshi font-medium">. La Découverte des API REST et leur implémentation/création.</p></li>
+          <li><p class="text-amber-50 leading-relaxed mb-2 text-lg Satoshi font-medium">. L'initiation à l'Utilisation d'ORM.</p></li>
+          <li><p class="text-amber-50 leading-relaxed mb-2 text-lg Satoshi font-medium">. La Découverte des Fonctions et Triggers en PostgreSQL.</p></li>
+          <li><p class="text-amber-50 leading-relaxed mb-2 text-lg Satoshi font-medium">. L'authentification Forte MFA avec utilisation de JWT Token et de serveur SMTP.</p></li>
+        </ul>
+      </p>
+    </div>
+
+    <footer class="mt-6 flex justify-end gap-3">
+      <button data-modal-close class="px-4 py-2 bg-[#263194] text-amber-50 rounded-lg hover:scale-105">Fermer</button>
+    </footer>
+  </div>
+</div>
+<!-- end modal -->
+
+<!-- Modal projet 2-->
+<div id="modal-project2" data-modal-overlay class="hidden fixed inset-0 z-50 flex items-center justify-center px-4 py-8" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="titre-modal1">
+  <!-- overlay  cache les elements en arrière plan -->
+  <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" data-modal-overlay></div>
+
+  <!-- modal content affichage du contenu de la modale-->
+  <div class="relative w-full max-w-3xl bg-[#0b1119]/95 border border-white/10 rounded-2xl shadow-2xl p-6 transform transition-all duration-300 max-h-[85vh] overflow-auto">
+
+    <header class="mb-4 flex justify-between items-start">
+      <h3 id="modal-project1-title" class="font-satoshi font-bold text-3xl text-[#32A0FB]">Site de Gestions de Comptabilité</h3>
+    </header>
+
+    <div>
+      <p class="Satoshi font-medium text-amber-50 leading-relaxed mb-5 text-lg text-justify">
+        Ce projet a été réalisé dans le cadre d'un Stage de première année de BTS SIO , chez l'entreprise Vademi Cybersécurité.
+        Le Projet avait pour but la réalisation d'un Site Web permettant la gestions de Facture et de Devis , 
+        et plus généralement de la comptabilité de l'entreprise.
+      </p>
+    </div>
+
+    <p class="Satoshi font-bold text-amber-50 mb-5 text-2xl ">Screenshot </p>
+    <div class="flex justify-center items-center flex-wrap gap-6">
+      <div class="w-full md:flex-1">
+        <div class="w-full mb-6 flex items-center justify-center">
+          <img src="image/site-compta.PNG" alt="dashboard du site" class="max-w-full max-h-[60vh] object-contain cursor-zoom-in rounded-md shadow-md">
+        </div>
+        
+        <div class="w-full mb-6 flex items-center justify-center">
+          <img src="image/site-compta1.PNG" alt="affichage des factures" class="max-w-full max-h-[60vh] object-contain cursor-zoom-in rounded-md shadow-md">
+        </div>
+
+        <div class="w-full mb-6 flex items-center justify-center">
+          <img src="image/site-compta2.PNG" alt="affichage des factures" class="max-w-full max-h-[60vh] object-contain cursor-zoom-in rounded-md shadow-md">
+        </div>
+      </div>
+
+    </div>
+
+    <div>
+      <p class="text-amber-50 leading-relaxed mb-5 text-lg Satoshi font-medium">
+        Ce projet a fait intervenir de nombreuse technologie et outils avec lesquelles je n'étais pas familier tel que:
+        <ul>
+          <li><p class="text-amber-50 leading-relaxed mb-2 text-lg Satoshi font-medium">. L'Utilisation de Framework pour le back-End avec FastAPI.</p></li>
+          <li><p class="text-amber-50 leading-relaxed mb-2 text-lg Satoshi font-medium">. La Découverte des API REST et leur implémentation/création.</p></li>
+          <li><p class="text-amber-50 leading-relaxed mb-2 text-lg Satoshi font-medium">. L'initiation à l'Utilisation d'ORM.</p></li>
+          <li><p class="text-amber-50 leading-relaxed mb-2 text-lg Satoshi font-medium">. La Découverte des Fonctions et Triggers en PostgreSQL.</p></li>
+          <li><p class="text-amber-50 leading-relaxed mb-2 text-lg Satoshi font-medium">. L'authentification Forte MFA avec utilisation de JWT Token et de serveur SMTP.</p></li>
+        </ul>
+      </p>
+    </div>
+
+    <footer class="mt-6 flex justify-end gap-3">
+      <button data-modal-close class="px-4 py-2 bg-[#263194] text-amber-50 rounded-lg hover:scale-105">Fermer</button>
+    </footer>
+  </div>
+</div>
+<!-- end modal -->
+
 
 </main>
 
   <footer>
 
   </footer>
+
+  <div id="img-viewer" class="hidden fixed inset-0 bg-black/80 flex justify-center items-center z-60">
+    <img id="img-viewer-img" class="max-h-[90%] max-w-[90%]" alt="">
+    <button id="img-viewer-close" class="absolute top-4 right-4 text-white text-3xl">✕</button>
+  </div> 
+  
+  <script src="js/modal.js"></script>
+  <script src="js/scroll.js"></script>
 </body>
 </html>
