@@ -76,6 +76,31 @@
 }
 
 #projects-scroller {
-  scrollbar-color: #32A0FB #10172a;
+  scrollbar-color: #2780c9 #10172a;
   scrollbar-width: thin;
+}
+
+/* Stylise la scrollbar du contenu des modales */
+#modal-project1 .relative::-webkit-scrollbar,
+#modal-project2 .relative::-webkit-scrollbar {
+  width: 10px;
+  background: #10172a;
+  border-radius: 8px;
+}
+#modal-project1 .relative::-webkit-scrollbar-thumb,
+#modal-project2 .relative::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, #232d83 0%, #32A0FB 100%);
+  border-radius: 8px;
+}
+#modal-project1 .relative::-webkit-scrollbar-track,
+#modal-project2 .relative::-webkit-scrollbar-track {
+  background: #10172a;
+  border-radius: 8px;
+}
+
+/* Pour Firefox */
+#modal-project1 .relative,
+#modal-project2 .relative {
+  scrollbar-width: thin;
+  scrollbar-color: #2780c9 #10172a;
 }
