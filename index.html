@@ -534,6 +534,39 @@
   </div>
 </div>
 
+<section id="Contact" class="w-full py-16">
+  <div class="max-w-3xl mx-auto rounded-3xl shadow-2xl bg-[#1a2336]/80 px-8 py-12 animate-[fade-slide-in-top_0.8s_ease-in-out_forwards]">
+    <h2 class="font-satoshi font-extrabold text-4xl md:text-5xl text-[#65baff] mb-8 text-center">Contact</h2>
+    <p class="font-satoshi font-bold text-amber-50 text-center text-lg mb-8">N'hésitez pas à me contacter pour toute question ou collaboration!</p>
+    
+    <form action="contact.php" method="POST" class="flex flex-col gap-6">
+      <div class="flex flex-col gap-2">
+        <label class="font-satoshi font-semibold text-amber-50 text-lg">Nom :</label>
+        <input type="text" name="nom" placeholder="Votre Nom ici" required
+          class="bg-[#0b1119]/80 border border-white/10 rounded-lg px-4 py-3 text-amber-50 font-satoshi placeholder:text-amber-50/50 focus:outline-none focus:border-[#65baff] focus:ring-2 focus:ring-[#65baff]/30 transition-all duration-200">
+      </div>
+
+      <div class="flex flex-col gap-2">
+        <label class="font-satoshi font-semibold text-amber-50 text-lg">Email :</label>
+        <input type="email" name="email" placeholder="exemple@gmail.com" required
+          class="bg-[#0b1119]/80 border border-white/10 rounded-lg px-4 py-3 text-amber-50 font-satoshi placeholder:text-amber-50/50 focus:outline-none focus:border-[#65baff] focus:ring-2 focus:ring-[#65baff]/30 transition-all duration-200">
+      </div>
+
+      <div class="flex flex-col gap-2">
+        <label class="font-satoshi font-semibold text-amber-50 text-lg">Message :</label>
+        <textarea name="message" placeholder="Votre message ici" required
+          class="bg-[#0b1119]/80 border border-white/10 rounded-lg px-4 py-3 text-amber-50 font-satoshi placeholder:text-amber-50/50 focus:outline-none focus:border-[#65baff] focus:ring-2 focus:ring-[#65baff]/30 transition-all duration-200 resize-none">
+        </textarea>
+      </div>
+
+      <button type="submit"
+        class="bg-[#2b3481] text-white font-satoshi font-semibold px-8 py-3 rounded-lg shadow-lg hover:bg-cyan-600 hover:scale-105 transition-all duration-200 mt-4">
+        Envoyer
+      </button>
+    </form>
+  </div>
+</section>
+
 
 </main>
 
