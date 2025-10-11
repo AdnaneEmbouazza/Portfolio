@@ -6,3 +6,7 @@
 *.woff2
 *.ttf
 *.otf
+/vendor/
+/private
+*.env
+*.htaccess
