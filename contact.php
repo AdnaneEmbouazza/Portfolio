@@ -6,7 +6,7 @@ use PHPMailer\PHPMailer\Exception; // pour gérer les erreurs
 use Dotenv\Dotenv; // Variables d'environnement
 
 // Chargement des variables d'environnement
-$dotenv = Dotenv::createImmutable(dirname(__DIR__) . '/private'); 
+$dotenv = Dotenv::createImmutable(dirname(__DIR__) . '/private/.env'); 
 $dotenv->load();
 
 
@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (!$nom ||!$email || !$message ) {
             throw new Exception("Tous les champs sont requis pour l'envoi du message.");
         }
-        
+
         // Config SMTP
         $mail->isSMTP();
         $mail->Host = $_ENV['SMTP_HOST']; 
@@ -32,10 +32,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->Username = $_ENV['SMTP_USERNAME'];
         $mail->Password = $_ENV['SMTP_PASSWORD'];
         $mail->SMTPSecure = 'ssl';
-        $mail->Port = '465';
+        $mail->Port = 465;
 
         // Expéditeur et destinataire
-        $mail->setFrom($_ENV['MAIL_FROM_ADDRESS'], $_ENV['MAIL_FROM_NAME']); // Expéditeur
+        $mail->setFrom($_ENV['MAIL_FROM_ADDRESS'],"Portfolio Embouazza"); // Expéditeur
         $mail->addAddress($_ENV['MAIL_TO_ADDRESS']);  // Destinataire
         $mail->addReplyTo($email, $nom); // visiteur (pour répondre)
 
@@ -46,9 +46,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->AltBody = "Nom: $nom\nEmail: $email\nMessage: $message"; // version texte
 
         $mail->send(); // envoi
-        echo "Message envoyé avec succès !";
+        print ("Message envoyé avec succès !");
+
     } 
     catch (Exception $e) {
-        echo "Erreur lors de l'envoi : {$mail->ErrorInfo}"; 
+        print ("Erreur lors de l'envoi : {$mail->ErrorInfo}"); 
     }
 }
