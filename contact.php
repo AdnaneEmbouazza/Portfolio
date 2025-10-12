@@ -6,7 +6,7 @@ use PHPMailer\PHPMailer\Exception; // pour gérer les erreurs
 use Dotenv\Dotenv; // Variables d'environnement
 
 // Chargement des variables d'environnement
-$dotenv = Dotenv::createImmutable(dirname(__DIR__) . '/private/.env'); 
+$dotenv = Dotenv::createImmutable(dirname(__DIR__) . '/private'); 
 $dotenv->load();
 
 
@@ -46,10 +46,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->AltBody = "Nom: $nom\nEmail: $email\nMessage: $message"; // version texte
 
         $mail->send(); // envoi
-        print ("Message envoyé avec succès !");
+        echo "Message envoyé avec succès !";
 
     } 
     catch (Exception $e) {
-        print ("Erreur lors de l'envoi : {$mail->ErrorInfo}"); 
+        echo "Erreur lors de l'envoi : {$mail->ErrorInfo}"; 
     }
 }
